@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<package>
+	<name>wait_for_input_actions</name>
+	<version>1.0.0</version>
+	<description>ROS package with actions for waiting for data input</description>
+	<author email="carloscosta.cmcc@gmail.com">Carlos Miguel Correia da Costa</author>
+	<maintainer email="carloscosta.cmcc@gmail.com">Carlos Miguel Correia da Costa</maintainer>
+	<license>BSD</license>
+
+
+
+	<!-- ################################################################## -->
+	<!-- Build system -->
+	<!-- ################################################################## -->
+
+	<!-- if using catkin -->
+	<buildtool_depend>catkin</buildtool_depend>
+
+
+
+	<!-- ################################################################## -->
+	<!-- Build dependencies -->
+	<!-- ################################################################## -->
+
+	<build_depend>actionlib</build_depend>
+	<build_depend>Boost</build_depend>
+	<build_depend>rosconsole</build_depend>
+	<build_depend>roscpp</build_depend>
+	<build_depend>std_msgs</build_depend>
+	<build_depend>task_manager_msgs</build_depend>
+
+
+
+	<!-- ################################################################## -->
+	<!-- Run dependencies -->
+	<!-- ################################################################## -->
+
+	<run_depend>actionlib</run_depend>
+	<run_depend>Boost</run_depend>
+	<run_depend>rosconsole</run_depend>
+	<run_depend>roscpp</run_depend>
+	<run_depend>std_msgs</run_depend>
+	<run_depend>task_manager_msgs</run_depend>
+
+</package>
