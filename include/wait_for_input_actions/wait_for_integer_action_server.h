@@ -42,6 +42,7 @@ class WaitForIntegerActionServer {
 		ros::Subscriber subscriber_integer_;
 		std::shared_ptr<WaitForInputSkillActionServer> wait_for_input_skill_action_server_;
 		std::string subscriber_integer_topic_;
+		std::string action_server_name_;
 		int last_received_integer_;
 		int goal_integer_;
 		bool pending_goal_;

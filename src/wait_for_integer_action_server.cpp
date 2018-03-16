@@ -21,13 +21,14 @@ bool WaitForIntegerActionServer::loadConfigurationFromParameterServer(ros::NodeH
 	node_handle_ = _node_handle;
 	private_node_handle_ = _private_node_handle;
 	private_node_handle_->param("integer_topic", subscriber_integer_topic_, std::string("integer"));
+	private_node_handle_->param("action_server_name", action_server_name_, std::string("WaitForInputSkillActionServer"));
 	return true;
 }
 
 
 void WaitForIntegerActionServer::start() {
 	subscriber_integer_ = node_handle_->subscribe(subscriber_integer_topic_, 1, &WaitForIntegerActionServer::integerCallback, this);
-	wait_for_input_skill_action_server_ = std::make_shared<WaitForInputSkillActionServer>(*node_handle_, "WaitForInputSkillActionServer", false);
+	wait_for_input_skill_action_server_ = std::make_shared<WaitForInputSkillActionServer>(*node_handle_, action_server_name_, false);
 	wait_for_input_skill_action_server_->registerGoalCallback(boost::bind(&WaitForIntegerActionServer::goalCallback, this));
 	wait_for_input_skill_action_server_->registerPreemptCallback(boost::bind(&WaitForIntegerActionServer::preemptCallback, this));
 	wait_for_input_skill_action_server_->start();
